@@ -7,7 +7,7 @@ def clean_skills(skills):
     if pd.isna(skills):
         return ""
     if isinstance(skills, str):
-        skills = ast.literal_eval(skills)  # "['a','b']" → ['a','b']
+        skills = ast.literal_eval(skills)  # "['a','b','c']" → ['a','b','c']
     return " ".join(skills)
 
 df['skills'] = df['job_skill_set'].apply(clean_skills)
